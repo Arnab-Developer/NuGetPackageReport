@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "parameters": "",
+  "projects": [
+    {
+      "path": "C:/repos/Api1/Api1/Api1.csproj",
+      "frameworks": [
+        {
+          "framework": "net8.0",
+          "topLevelPackages": [
+            {
+              "id": "Asp.Versioning.Http",
+              "requestedVersion": "8.1.0",
+              "resolvedVersion": "8.1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "C:/repos/Api1/Api2/Api2.csproj",
+      "frameworks": [
+        {
+          "framework": "net8.0"
+        }
+      ]
+    }
+  ]
+}

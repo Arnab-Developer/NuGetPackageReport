@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Package>;
+
+@{
+    ViewData["Title"] = "Report";
+}
+
+<form asp-controller="Report" asp-action="GenerateReport" method="post">
+    <input type="text" name="nugetPackageJsonLocation" />
+    <input type="submit" value="Generate Report" />
+</form>

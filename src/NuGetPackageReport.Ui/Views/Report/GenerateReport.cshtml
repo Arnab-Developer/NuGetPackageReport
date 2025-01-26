@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Package>;
+
+@{
+    ViewData["Title"] = "Show Report";
+}
+
+@foreach (var package in Model)
+{
+    <h2>@package.Id</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Projects.First().Name)</td>
+                <td>@Html.DisplayNameFor(model => model.Projects.First().Framework)</td>
+                <td>@Html.DisplayNameFor(model => model.Projects.First().RequestedVersion)</td>
+                <td>@Html.DisplayNameFor(model => model.Projects.First().ResolvedVersion)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in package.Projects)
+            {
+                <tr>
+                    <td>@project.Name</td>
+                    <td>@project.Framework</td>
+                    <td>@project.RequestedVersion</td>
+                    <td>@project.ResolvedVersion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+}
