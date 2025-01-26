@@ -10,10 +10,10 @@ public class ReportController(ReportApiClient reportApiClient) : Controller
 
     [HttpPost]
     public async Task<IActionResult> GenerateReport(
-        string nugetPackageJsonLocation,
+        string nugetPackageJsonFileName,
         CancellationToken token)
     {
-        var packages = await _reportApiClient.GetReportAsync(nugetPackageJsonLocation, token);
+        var packages = await _reportApiClient.GetReportAsync(nugetPackageJsonFileName, token);
         return View(packages);
     }
 }

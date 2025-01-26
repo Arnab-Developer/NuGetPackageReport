@@ -9,10 +9,10 @@ public class ReportApiClient(HttpClient httpClient, IOptionsMonitor<ApiOptions> 
     private readonly ApiOptions _apiOptions = optionsMonitor.CurrentValue;
 
     public async Task<IEnumerable<Package>> GetReportAsync(
-        string nugetPackageJsonLocation,
+        string nugetPackageJsonFileName,
         CancellationToken token)
     {
-        var requestUrl = $"{_apiOptions.Url}?nugetPackageJsonLocation={nugetPackageJsonLocation}";
+        var requestUrl = $"{_apiOptions.Url}?nugetPackageJsonFileName={nugetPackageJsonFileName}";
 
         var packages = await _httpClient.GetFromJsonAsync<IEnumerable<Package>>(requestUrl, token)
             ?? throw new InvalidOperationException();
