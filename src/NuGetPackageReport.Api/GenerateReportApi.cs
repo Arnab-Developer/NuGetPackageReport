@@ -12,9 +12,7 @@ public static class GenerateReportApi
             IGenerateReport generateReport,
             CancellationToken token) =>
         {
-            var fileWithExtension = $"{nugetPackageJsonFileName}.json";
-            var nugetPackageJsonLocation = Path.Combine("c:", "NuGetPackageJson", fileWithExtension);
-            var json = await jsonReader.GetJsonAsync(nugetPackageJsonLocation, token);
+            var json = await jsonReader.GetJsonAsync(nugetPackageJsonFileName, token);
             var output = generateReport.Generate(json);
             return output;
         });
