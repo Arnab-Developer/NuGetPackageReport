@@ -19,11 +19,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
         
+    - name: Restore
+      run: dotnet restore --locked-mode
+
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build -c Release --no-restore
 
     - name: Test
-      run: dotnet test --configuration Release
+      run: dotnet test -c Release --no-build
 
   codeql-analysis:    
     name: CodeQL analysis
